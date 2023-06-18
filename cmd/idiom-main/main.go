@@ -1,6 +1,8 @@
 package main
 
-import "github.com/DesignPatternsInGO/idiom"
+import (
+	im "github.com/DesignPatternsinGO/idiom"
+)
 
 
-emptyFile, err = 
+emptyFile, err = im.

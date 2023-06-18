@@ -36,7 +36,7 @@ func Permissions(perms os.FileMode) Option {
 	}
 }
 
-//Constructor
+// Constructor
 func NewFile(filepath string, setters ...Option) error {
 	// Default Options
 	args := &Options{

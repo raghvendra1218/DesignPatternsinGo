@@ -19,3 +19,11 @@
 
 # Go workspace file
 go.work
+
+# Ignore Mac OS X files
+.DS_STORE
+
+# Visual Studio code IDE
+.vscode/
+
+vendor
