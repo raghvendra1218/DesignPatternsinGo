@@ -1,6 +1,9 @@
 package idiom
 
-import "os"
+import (
+	"fmt"
+	"os"
+)
 
 type Options struct {
 	UID         int
@@ -53,10 +56,12 @@ func NewFile(filepath string, setters ...Option) error {
 
 	f, err := os.OpenFile(filepath, args.Flags, args.Permissions)
 	if err != nil {
+		if os.IsExist(err) {
+			return fmt.Errorf("file already exists: %s", filepath)
+		}
 		return err
-	} else {
-		defer f.Close()
 	}
+	defer f.Close()
 
 	if _, err := f.WriteString(args.Contents); err != nil {
 		return err
